@@ -1,11 +1,14 @@
 package com.example.booksearchapp.data.model
 
 
+import android.os.Parcelable
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import kotlinx.parcelize.Parcelize
 
 // https://resttesttest.com/ 에서 request를 받아 response 데이터를 JsonConverter를 사용한다.
 
+@Parcelize
 @JsonClass(generateAdapter = true)
 data class Book(
     val authors: List<String>,
@@ -21,4 +24,4 @@ data class Book(
     val title: String, // Android Studio를 활용한 안드로이드 프로그래밍(7판)(IT CookBook)
     val translators: List<String>,
     val url: String // https://search.daum.net/search?w=bookpage&bookId=5958356&q=Android+Studio%EB%A5%BC+%ED%99%9C%EC%9A%A9%ED%95%9C+%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C+%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%287%ED%8C%90%29%28IT+CookBook%29
-)
+) : Parcelable

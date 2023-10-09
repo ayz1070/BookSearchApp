@@ -4,6 +4,8 @@ plugins {
     id("com.google.devtools.ksp")
 
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
+    id("androidx.navigation.safeargs.kotlin")
+    id("kotlin-parcelize")
 }
 
 
@@ -76,4 +78,11 @@ dependencies {
 
     // Coil
     implementation("io.coil-kt:coil:2.0.0-rc03")
+
+
+    implementation("androidx.recyclerview:recyclerview:1.2.1")
+
+    // Navigation
+    implementation("androidx.navigation:navigation-fragment-ktx:2.4.2")
+    implementation("androidx.navigation:navigation-ui-ktx:2.4.2")
 }
