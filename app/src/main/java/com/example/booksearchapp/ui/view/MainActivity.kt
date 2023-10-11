@@ -10,10 +10,11 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.booksearchapp.R
+import com.example.booksearchapp.data.db.BookSearchDatabase
 import com.example.booksearchapp.data.respository.BookSearchRepositoryImpl
 import com.example.booksearchapp.databinding.ActivityMainBinding
-import com.example.booksearchapp.ui.view.viewmodel.BookSearchViewModel
-import com.example.booksearchapp.ui.view.viewmodel.BookSearchViewModelProviderFactory
+import com.example.booksearchapp.ui.viewmodel.BookSearchViewModel
+import com.example.booksearchapp.ui.viewmodel.BookSearchViewModelProviderFactory
 
 class MainActivity : AppCompatActivity() {
     private val binding: ActivityMainBinding by lazy {
@@ -34,7 +35,9 @@ class MainActivity : AppCompatActivity() {
 
         setupJetpackNavigation()
 
-        val bookSearchRepository = BookSearchRepositoryImpl()
+        val database = BookSearchDatabase.getInstance(this)
+
+        val bookSearchRepository = BookSearchRepositoryImpl(database)
         val factory = BookSearchViewModelProviderFactory(bookSearchRepository, this)
         bookSearchViewModel = ViewModelProvider(this, factory)[BookSearchViewModel::class.java]
     }

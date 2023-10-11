@@ -1,4 +1,4 @@
-package com.example.booksearchapp.ui.view.viewmodel
+package com.example.booksearchapp.ui.viewmodel
 
 import android.os.Bundle
 import androidx.lifecycle.AbstractSavedStateViewModelFactory
