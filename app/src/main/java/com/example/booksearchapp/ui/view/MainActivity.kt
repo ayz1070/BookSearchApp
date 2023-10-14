@@ -17,9 +17,12 @@ import com.example.booksearchapp.ui.viewmodel.BookSearchViewModel
 import com.example.booksearchapp.ui.viewmodel.BookSearchViewModelProviderFactory
 
 class MainActivity : AppCompatActivity() {
+
     private val binding: ActivityMainBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
+
+    // by lazy 도 lateinit과 비슷하게 초기화를 미루는 역할. 대신 val인 경우 by lazy를, var인 경우 lateinit을 사용한다.
     lateinit var bookSearchViewModel: BookSearchViewModel
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
